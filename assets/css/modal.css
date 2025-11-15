@@ -1,0 +1,210 @@
+/**
+ * Modal Styles
+ * Dialogs, overlays, forms
+ */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-modal);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    animation: fadeIn var(--transition-fast);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    min-width: 400px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
+    animation: slideUp var(--transition-base);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+}
+
+.modal-close {
+    font-size: 24px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: var(--spacing-lg);
+}
+
+.modal-field {
+    margin-bottom: var(--spacing-md);
+}
+
+.modal-field:last-child {
+    margin-bottom: 0;
+}
+
+.modal-field label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.modal-field input,
+.modal-field select {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.modal-btn-primary {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.modal-btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.modal-btn-secondary {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.modal-btn-secondary:hover {
+    background-color: var(--border-color);
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: var(--z-toast);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    pointer-events: none;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: var(--shadow-lg);
+    min-width: 300px;
+    pointer-events: all;
+    animation: slideInRight var(--transition-base);
+}
+
+.toast.success {
+    border-left: 4px solid var(--success-color);
+}
+
+.toast.error {
+    border-left: 4px solid var(--error-color);
+}
+
+.toast.warning {
+    border-left: 4px solid var(--warning-color);
+}
+
+.toast.info {
+    border-left: 4px solid var(--accent-color);
+}
+
+.toast-message {
+    flex: 1;
+    color: var(--text-primary);
+}
+
+.toast-close {
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.toast-close:hover {
+    color: var(--text-primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

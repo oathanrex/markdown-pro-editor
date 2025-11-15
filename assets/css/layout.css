@@ -1,0 +1,149 @@
+/**
+ * Layout Styles
+ * Main container, splitter, grid
+ */
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - var(--toolbar-height));
+}
+
+/* Editor Pane */
+.editor-pane {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    width: 50%;
+    background-color: var(--bg-primary);
+    border-right: 1px solid var(--border-color);
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.editor-wrapper {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Preview Pane */
+.preview-pane {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+    background-color: var(--bg-primary);
+    overflow: hidden;
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.preview-content {
+    flex: 1;
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.preview-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-tertiary);
+    text-align: center;
+}
+
+.preview-placeholder h1 {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+/* Splitter */
+.splitter {
+    width: var(--splitter-width);
+    background-color: var(--border-color);
+    cursor: col-resize;
+    user-select: none;
+    position: relative;
+    transition: background-color var(--transition-fast);
+}
+
+.splitter:hover,
+.splitter.dragging {
+    background-color: var(--accent-color);
+}
+
+.splitter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -4px;
+    right: -4px;
+    bottom: 0;
+}
+
+/* Fullscreen Mode */
+.fullscreen-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.fullscreen-mode .toolbar {
+    position: sticky;
+    top: 0;
+}
+
+/* Distraction Free Mode */
+.distraction-free .toolbar {
+    transform: translateY(-100%);
+    transition: transform var(--transition-base);
+}
+
+.distraction-free:hover .toolbar {
+    transform: translateY(0);
+}
+
+.distraction-free .editor-header,
+.distraction-free .preview-header {
+    display: none;
+}

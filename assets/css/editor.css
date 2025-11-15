@@ -1,0 +1,74 @@
+/**
+ * Editor Styles
+ * Textarea, line numbers, cursor
+ */
+
+.editor {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-md);
+    padding-left: var(--spacing-sm);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border: none;
+    resize: none;
+    outline: none;
+    overflow-y: auto;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
+    tab-size: 4;
+}
+
+.editor::placeholder {
+    color: var(--text-tertiary);
+}
+
+/* Line Numbers */
+.line-numbers {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-md) var(--spacing-sm);
+    padding-right: var(--spacing-md);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-tertiary);
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    user-select: none;
+    text-align: right;
+    overflow: hidden;
+    min-width: 50px;
+}
+
+.line-numbers span {
+    display: block;
+    height: 22.4px;
+}
+
+/* Vim Mode Indicator */
+body[data-vim-mode="true"] .editor {
+    border: 2px solid var(--success-color);
+}
+
+/* Focus State */
+.editor:focus {
+    background-color: var(--bg-primary);
+}
+
+/* Selection */
+.editor::selection {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+/* Tab Handling */
+.editor[data-tab-enabled="true"] {
+    tab-size: 4;
+    -moz-tab-size: 4;
+}

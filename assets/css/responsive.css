@@ -1,0 +1,159 @@
+/**
+ * Responsive Styles
+ * Mobile and tablet optimizations
+ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .toolbar {
+        height: auto;
+        min-height: var(--toolbar-height);
+    }
+    
+    .toolbar-stats {
+        order: 999;
+        width: 100%;
+        justify-content: center;
+        padding-top: var(--spacing-sm);
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .toc-container {
+        width: 200px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --toolbar-height: auto;
+        --spacing-md: 0.75rem;
+        --spacing-lg: 1rem;
+    }
+    
+    .toolbar {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-xs);
+    }
+    
+    .toolbar-btn {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .toolbar-divider {
+        display: none;
+    }
+    
+    .toolbar-stats .stat {
+        font-size: 0.75rem;
+    }
+    
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .editor-pane {
+        width: 100%;
+        height: 50%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .preview-pane {
+        width: 100%;
+        height: 50%;
+    }
+    
+    .splitter {
+        width: 100%;
+        height: var(--splitter-width);
+        cursor: row-resize;
+    }
+    
+    .splitter::before {
+        top: -4px;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+    }
+    
+    .preview-content {
+        padding: var(--spacing-md);
+    }
+    
+    .toc-container {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .modal-content {
+        min-width: 90vw;
+        margin: var(--spacing-md);
+    }
+    
+    .toast-container {
+        left: var(--spacing-md);
+        right: var(--spacing-md);
+    }
+    
+    .toast {
+        min-width: auto;
+    }
+    
+    /* Hide some toolbar items on mobile */
+    .toolbar-group[data-group="format"] .toolbar-btn:nth-child(n+3),
+    .toolbar-group[data-group="insert"] .toolbar-btn:nth-child(n+5) {
+        display: none;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .toolbar-stats {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .editor,
+    .line-numbers {
+        font-size: 13px;
+    }
+    
+    .preview-content {
+        font-size: 14px;
+    }
+    
+    .modal-content {
+        min-width: 95vw;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .toolbar,
+    .editor-pane,
+    .splitter,
+    .toc-container {
+        display: none !important;
+    }
+    
+    .main-content {
+        display: block;
+        height: auto;
+    }
+    
+    .preview-pane {
+        width: 100%;
+        height: auto;
+    }
+    
+    .preview-header {
+        display: none;
+    }
+    
+    .preview-content {
+        padding: 0;
+        overflow: visible;
+    }
+}

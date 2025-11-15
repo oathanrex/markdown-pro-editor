@@ -1,0 +1,65 @@
+/**
+ * Dark Theme
+ * Dark color scheme
+ */
+
+body[data-theme="dark"] {
+    --bg-primary: #1e1e1e;
+    --bg-secondary: #252526;
+    --bg-tertiary: #2d2d30;
+    --text-primary: #d4d4d4;
+    --text-secondary: #9d9d9d;
+    --text-tertiary: #6e6e6e;
+    --border-color: #3e3e42;
+    --accent-color: #0e639c;
+    --accent-hover: #1177bb;
+    --success-color: #4ec9b0;
+    --error-color: #f48771;
+    --warning-color: #cca700;
+}
+
+/* Preview Content Styling */
+body[data-theme="dark"] .preview-content {
+    color: #d4d4d4;
+}
+
+body[data-theme="dark"] .preview-content h1,
+body[data-theme="dark"] .preview-content h2 {
+    border-bottom: 1px solid #3e3e42;
+    padding-bottom: 0.3em;
+}
+
+body[data-theme="dark"] .preview-content blockquote {
+    border-left: 4px solid #3e3e42;
+    background-color: #2d2d30;
+}
+
+body[data-theme="dark"] .preview-content pre {
+    background-color: #1e1e1e;
+    border: 1px solid #3e3e42;
+}
+
+body[data-theme="dark"] .preview-content code {
+    background-color: #2d2d30;
+    color: #d4d4d4;
+}
+
+body[data-theme="dark"] .preview-content table {
+    border-color: #3e3e42;
+}
+
+body[data-theme="dark"] .preview-content table th {
+    background-color: #252526;
+}
+
+body[data-theme="dark"] .preview-content table tr:nth-child(even) {
+    background-color: #252526;
+}
+
+body[data-theme="dark"] .preview-content a {
+    color: #3794ff;
+}
+
+body[data-theme="dark"] .preview-content a:hover {
+    color: #1177bb;
+}

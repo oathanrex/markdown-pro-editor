@@ -1,0 +1,52 @@
+/**
+ * Light Theme
+ * Default color scheme
+ */
+
+body[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-tertiary: #adb5bd;
+    --border-color: #dee2e6;
+    --accent-color: #007bff;
+    --accent-hover: #0056b3;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+}
+
+/* Preview Content Styling */
+body[data-theme="light"] .preview-content {
+    color: #24292e;
+}
+
+body[data-theme="light"] .preview-content h1,
+body[data-theme="light"] .preview-content h2 {
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 0.3em;
+}
+
+body[data-theme="light"] .preview-content blockquote {
+    border-left: 4px solid #dfe2e5;
+    background-color: #f6f8fa;
+}
+
+body[data-theme="light"] .preview-content pre {
+    background-color: #f6f8fa;
+    border: 1px solid #e1e4e8;
+}
+
+body[data-theme="light"] .preview-content table {
+    border-color: #d1d5da;
+}
+
+body[data-theme="light"] .preview-content table th {
+    background-color: #f6f8fa;
+}
+
+body[data-theme="light"] .preview-content table tr:nth-child(even) {
+    background-color: #f6f8fa;
+}
